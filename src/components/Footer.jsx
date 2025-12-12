@@ -18,7 +18,7 @@ function Footer() {
 
         {/* Credits */}
         <p className="text-gray-400 dark:text-gray-500 text-xs">
-          © {currentYear} CineSearch. Built with ❤️ love 
+          © {currentYear} CineSearch. Built with 💙 love 
         </p> 
       </div>
     </footer>

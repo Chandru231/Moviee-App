@@ -119,7 +119,7 @@ function MovieDetails() {
               {movie.genres.map(genre => (
                 <span 
                   key={genre.id}
-                  className="px-2 md:px-3 py-1 bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 rounded-full text-xs md:text-sm"
+                  className="px-2 md:px-3 py-1 bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full text-xs md:text-sm"
                 >
                   {genre.name}
                 </span>

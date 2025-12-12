@@ -40,7 +40,7 @@ function Navbar() {
                 : 'hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105'
             }`}
           >
-            <span className="hidden sm:inline">💙 Favorites</span>
+            <span className="hidden sm:inline">❤️ Favorites</span>
             <span className="sm:hidden">❤️</span>
           </Link>
 
