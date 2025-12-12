@@ -52,6 +52,10 @@ A modern, responsive movie discovery web application built with React and powere
 10. Retry logic for failed API calls 
 11. Automatic refetching and background updates
 12. Test components, hooks, and API calls
+13. Watchlist
+14. Social Sharing
+15. Unit Testing
+
 
 
 Built with 💙 love | © 2025 CineSearch
