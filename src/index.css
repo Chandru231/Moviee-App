@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* Enable dark mode via class selector */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Prevent horizontal overflow on all devices */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
+
+#root {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Force select dropdown styling */
+select {
+  font-size: 16px !important;
+  max-width: 100%;
+}
+
+/* Dark mode dropdown options */
+.dark select option {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+.dark select option:hover,
+.dark select option:checked {
+  background-color: #374151;
+}
+
+/* ===== ANIMATIONS ===== */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse animation for loading */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Bounce animation for buttons */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Apply fade-in to movie cards */
+.movie-card-animate {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Smooth page transitions */
+.page-transition {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Button hover bounce effect */
+.btn-bounce:hover {
+  animation: bounce 0.5s ease-in-out;
+}
