@@ -1,4 +1,3 @@
-// App.jsx - Main app component with routing
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { FavoritesProvider } from './FavoritesContext';
@@ -7,7 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
 
-// Lazy load pages for better performance
+// Lazy loading
 const Home = lazy(() => import('./pages/Home'));
 const MovieDetails = lazy(() => import('./pages/MovieDetails'));
 const Favorites = lazy(() => import('./pages/Favorites'));

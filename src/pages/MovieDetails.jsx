@@ -1,4 +1,3 @@
-// MovieDetails.jsx - Shows detailed info about a movie
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getMovieDetails, getImageUrl } from '../api';

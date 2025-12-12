@@ -1,5 +1,4 @@
-// Footer.jsx - Simple footer with credits
-function Footer() {
+  function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (

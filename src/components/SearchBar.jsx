@@ -1,5 +1,4 @@
-// SearchBar.jsx - Search input with debounce
-import { useState, useEffect } from 'react';
+ import { useState, useEffect } from 'react';
 
 function SearchBar({ onSearch }) {
   const [searchText, setSearchText] = useState('');

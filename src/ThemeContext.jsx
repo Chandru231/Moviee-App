@@ -1,4 +1,4 @@
-// ThemeContext.jsx - Manages dark/light theme
+// Manages dark/light theme 
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
@@ -10,17 +10,17 @@ export function useTheme() {
 
 // Provider component
 export function ThemeProvider({ children }) {
-  // Get theme from localStorage (default: dark)
+  // Get theme from localStorage 
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem('theme');
-    return saved ? saved === 'dark' : true; // Default to dark
+    return saved ? saved === 'dark' : true; 
   });
 
-  // Update localStorage and document class when theme changes
+  // Update localStorage 
   useEffect(() => {
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
     
-    // Add or remove 'dark' class on document
+    // Add or remove 
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {

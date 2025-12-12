@@ -1,4 +1,4 @@
-// FavoritesContext.js - Manages favorite movies
+// FavoritesContext.js 
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const FavoritesContext = createContext();
@@ -9,14 +9,14 @@ export function useFavorites() {
 }
 
 // Provider component
-export function FavoritesProvider({ children }) {
-  // Get favorites from localStorage when app loads
+export function FavoritesProvider({ children }) { 
+
   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem('favorites');
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Save to localStorage whenever favorites change
+  // Save to localStorage 
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);

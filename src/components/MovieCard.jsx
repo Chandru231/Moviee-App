@@ -1,7 +1,6 @@
-// MovieCard.jsx - Shows a single movie card
-import { useNavigate } from 'react-router-dom';
-import { useFavorites } from '../FavoritesContext';
-import { getImageUrl } from '../api';
+ import { useNavigate } from 'react-router-dom';
+ import { useFavorites } from '../FavoritesContext';
+ import { getImageUrl } from '../api';
 
 function MovieCard({ movie }) {
   const navigate = useNavigate();

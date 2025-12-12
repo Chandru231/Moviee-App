@@ -1,11 +1,10 @@
-// Home.jsx - Home page showing popular movies
 import { useState, useEffect, useCallback } from 'react';
 import SearchBar from '../components/SearchBar';
 import MovieList from '../components/MovieList';
 import Loader from '../components/Loader';
 import { getPopularMovies, searchMovies, getMoviesByLanguage } from '../api';
 
-// Only popular genres
+// genres
 const GENRES = [
   { id: 28, name: 'Action' },
   { id: 35, name: 'Comedy' },
@@ -114,7 +113,7 @@ function Home() {
           <SearchBar onSearch={handleSearch} />
         </div>
 
-        {/* Filters - Modern styled dropdown selects */}
+        {/* Filters */}
         {!searchQuery && (
           <div className="mb-8 mx-auto w-full px-2 sm:px-0" style={{ maxWidth: '600px' }}>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">

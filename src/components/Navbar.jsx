@@ -1,6 +1,5 @@
-// Navbar.jsx - Navigation bar component
-import { Link, useLocation } from 'react-router-dom';
-import { useTheme } from '../ThemeContext';
+ import { Link, useLocation } from 'react-router-dom';
+ import { useTheme } from '../ThemeContext';
 
 function Navbar() {
   const location = useLocation();

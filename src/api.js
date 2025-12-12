@@ -1,16 +1,14 @@
-// api.js - All API calls for TMDB
-// Simple and straightforward for beginners
-
+// API calls for TMDB
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
 
-// Helper to get image URL
+//get image URL
 export function getImageUrl(path) {
   if (!path) return null;
   return `https://image.tmdb.org/t/p/w500${path}`;
 }
 
-// Get popular movies (using /movie/popular endpoint)
+// Get popular movies 
 export async function getPopularMovies(page = 1) {
   const response = await fetch(
     `${BASE_URL}/movie/popular?api_key=${API_KEY}&page=${page}`
@@ -19,7 +17,7 @@ export async function getPopularMovies(page = 1) {
   return response.json();
 }
 
-// Search movies
+// Searching movies
 export async function searchMovies(query, page = 1) {
   const response = await fetch(
     `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`
@@ -37,7 +35,7 @@ export async function getMovieDetails(id) {
   return response.json();
 }
 
-// Get movies by specific language (for filter)
+// Get movies by specific language 
 export async function getMoviesByLanguage(language, page = 1) {
   const response = await fetch(
     `${BASE_URL}/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&with_original_language=${language}&page=${page}`

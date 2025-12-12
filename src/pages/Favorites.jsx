@@ -1,6 +1,5 @@
-// Favorites.jsx - Shows saved favorite movies
-import { useFavorites } from '../FavoritesContext';
-import MovieList from '../components/MovieList';
+ import { useFavorites } from '../FavoritesContext';
+ import MovieList from '../components/MovieList';
 
 function Favorites() {
   const { favorites } = useFavorites();
