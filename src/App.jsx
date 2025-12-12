@@ -1,24 +1,34 @@
 // App.jsx - Main app component with routing
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import { FavoritesProvider } from './FavoritesContext';
 import { ThemeProvider } from './ThemeContext';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import MovieDetails from './pages/MovieDetails';
-import Favorites from './pages/Favorites';
+import Footer from './components/Footer';
+import Loader from './components/Loader';
+
+// Lazy load pages for better performance
+const Home = lazy(() => import('./pages/Home'));
+const MovieDetails = lazy(() => import('./pages/MovieDetails'));
+const Favorites = lazy(() => import('./pages/Favorites'));
 
 function App() {
   return (
     <ThemeProvider>
       <FavoritesProvider>
         <BrowserRouter>
-          <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors overflow-x-hidden max-w-full">
+          <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 transition-colors overflow-x-hidden max-w-full">
             <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/movie/:id" element={<MovieDetails />} />
-              <Route path="/favorites" element={<Favorites />} />
-            </Routes>
+            <main className="flex-grow">
+              <Suspense fallback={<Loader />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/movie/:id" element={<MovieDetails />} />
+                  <Route path="/favorites" element={<Favorites />} />
+                </Routes>
+              </Suspense>
+            </main>
+            <Footer />
           </div>
         </BrowserRouter>
       </FavoritesProvider>

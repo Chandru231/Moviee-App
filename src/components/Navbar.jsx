@@ -16,7 +16,7 @@ function Navbar() {
         {/* Logo with custom image */}
         <Link to="/" className="flex items-center gap-2 transition-transform duration-200 hover:scale-105">
           <img src="/hero section.png" alt="MovieApp" className="w-8 h-8 md:w-10 md:h-10" />
-          <span className="hidden sm:inline text-xl md:text-2xl font-bold text-blue-500">MovieApp</span>
+          <span className="text-lg sm:text-xl md:text-2xl font-bold text-blue-500">CineSearch</span>
         </Link>
 
         {/* Nav Links */}

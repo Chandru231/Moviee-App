@@ -34,6 +34,7 @@ function MovieCard({ movie }) {
           <img 
             src={getImageUrl(movie.poster_path)} 
             alt={movie.title}
+            loading="lazy"
             className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover transition-transform duration-300 hover:scale-110"
           />
         ) : (
