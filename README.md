@@ -55,6 +55,11 @@ A modern, responsive movie discovery web application built with React and powere
 13. Watchlist
 14. Social Sharing
 15. Unit Testing
+16. Trending Movies
+17. TV Series Support
+18. More Animations & Transitions
+19. Multi-language UI 
+20. Mobile App (React Native)
 
 
 
