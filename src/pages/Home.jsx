@@ -30,10 +30,11 @@ const LANGUAGES = [
 ];
 
 function Home() {
+  const [initialRandomPage] = useState(() => Math.floor(Math.random() * 20) + 1);
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(initialRandomPage);
   const [hasMore, setHasMore] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('');
@@ -78,9 +79,11 @@ function Home() {
   }, [searchQuery, selectedGenre, selectedLanguage]);
 
   useEffect(() => {
-    setPage(1);
-    fetchMovies(1, true);
-  }, [searchQuery, selectedGenre, selectedLanguage, fetchMovies]);
+    
+    const startPage = (!searchQuery && !selectedLanguage && !selectedGenre) ? initialRandomPage : 1;
+    setPage(startPage);
+    fetchMovies(startPage, true);
+  }, [searchQuery, selectedGenre, selectedLanguage, fetchMovies, initialRandomPage]);
 
   const handleSearch = useCallback((query) => {
     setSearchQuery(query);
